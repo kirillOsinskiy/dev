@@ -145,7 +145,7 @@
             function addSelGuest(guestData) {
                 $.ajax({
                     type: 'post',
-                    url: '/Driverbook/guestSelAdd.html',
+                    url: '/guestSelAdd.html',
                     data: {'guestData': guestData},
                     response: 'text',
                     success: function (data) {
@@ -242,7 +242,7 @@
             function getSelGuests() {
                 $.ajax({
                     type: 'get',
-                    url: '/Driverbook/guestSelected.html',
+                    url: '/guestSelected.html',
                     data: null,
                     response: 'text',
                     success: function (data) {
@@ -254,7 +254,7 @@
             function getDriverClasses() {
                 $.ajax({
                     type: 'get',
-                    url: '/Driverbook/driverClasses.html',
+                    url: '/driverClasses.html',
                     data: null,
                     response: 'text',
                     success: function (data) {
@@ -274,7 +274,7 @@
                     }
                     $.ajax({
                         type: 'post',
-                        url: '/Driverbook/guestsAc.html',
+                        url: '/guestsAc.html',
                         data: {'fio': guestData},
                         response: 'text',
                         success: function (data) {

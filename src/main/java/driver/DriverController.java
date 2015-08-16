@@ -19,7 +19,8 @@ public class DriverController {
 
     public DriverController(DriverManager driverManager) {
         this.driverManager = driverManager;        
-    }    
+    }
+
     /**
      * Показать форму
      * @return 
@@ -28,12 +29,13 @@ public class DriverController {
     public ModelAndView addGuest()  {        
         return new ModelAndView("guest.jsp");
     }
+
     /**
      * Добавить водителя в табличку на форме
      * @param request
      * @return
      * @throws UnsupportedEncodingException 
-     */    
+     */
     @RequestMapping(value="/guestSelAdd")
     public @ResponseBody Collection<Driver> addSelectedGuest(HttpServletRequest request) 
             throws UnsupportedEncodingException {        
@@ -44,6 +46,7 @@ public class DriverController {
         }
         return driverManager.getSelectedGuests();
     }
+
     /**
      * Вернуть справочник классов водителей
      * @return 
@@ -52,6 +55,7 @@ public class DriverController {
     public @ResponseBody List<String> getDriverClasses() {
         return driverManager.getDriverClasses();
     }
+
     /**
      * Вернуть всех водителей добалвенных в табличку на форму
      * @return 
@@ -60,13 +64,14 @@ public class DriverController {
     public @ResponseBody Collection<Driver> getSelectedGuests(){ 
         return driverManager.getSelectedGuests();
     }
+
     /**
      * Найти водителей для поля поиска по совпадениям с ФИО
      * @param request
      * @return
      * @throws UnsupportedEncodingException 
      */
-    @RequestMapping(value ="/guestsAc")  
+    @RequestMapping(value ="/guestsAc")
     public @ResponseBody List<String> getGuestsAC(HttpServletRequest request) 
             throws UnsupportedEncodingException{
         request.setCharacterEncoding("UTF-8");
@@ -76,6 +81,7 @@ public class DriverController {
         }
         return driverManager.getGuestsAC();
     }
+
     /**
      * Удалить водителя из таблички
      * @param request
@@ -92,6 +98,7 @@ public class DriverController {
         }
         return driverManager.getSelectedGuests();
     }
+
     /**
      * Добавить или сохранить нового водителя в "БД"
      * @param request
@@ -110,6 +117,7 @@ public class DriverController {
         }        
         return driverManager.getSelectedGuests();
     }
+
     /**
      * Формирует объект фодителя из запроса
      * @param request
